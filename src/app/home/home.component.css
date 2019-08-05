@@ -1,0 +1,10 @@
+.vl {
+    border-left: 6px solid red;
+    height: 500px;
+  }
+
+  .center{margin:auto;}
+
+#menu ul{
+  display:inline;
+}
