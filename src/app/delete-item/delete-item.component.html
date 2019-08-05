@@ -1,0 +1,58 @@
+<div class="container">
+        <div class="row">
+          <div class="col-sm-3">
+      <!--Empty div-->
+        </div>
+            <div class="card col-md-6" style="margin-top: 5rem">
+                <div class="card-header" >
+                  <div style="align-self:center ;">
+                     Delete Items
+                  </div>
+                 
+                </div>
+                <div class="card-body">
+                    <br/>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                          <th>Item</th>
+                          <th>Quantity</th>
+                          <th>Price per Item</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of sales"> 
+                                <td >{{item.item}}</td>
+                                <td>{{item.quantity}}</td>
+                                <td>{{item.unitPrice}}</td>
+
+                                <td><button class="btn btn-danger btn-sm" (click)="deleteItem(item)"> Delete</button></td>
+                                </tr>
+                        </tbody>
+                          </table>
+                
+                    <br/>
+                    <br/>
+                    
+                     
+                </div>
+                <div class="container" col-md-12 style="margin-bottom: 2rem">
+                        
+                        <button  type="submit" class="btn btn-primary" [routerLink]="['/']" routerLinkActive="router-link-active" >Back</button>
+                           
+                 </div>
+               
+              </div>
+      
+              <div class="col-sm-3">
+      <!--Empty div-->
+                </div>
+        </div>
+      
+        <br/>
+        <br>
+        <br/>
+        <br>
+        <br/>
+        <br>
+      </div>

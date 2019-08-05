@@ -1,0 +1,112 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+<!--Empty div-->
+  </div>
+  
+      <div class="card col-md-8" style="margin-top: 5rem" ng-change="drawCanvas()" ng-model="upperText">
+        <div id="contentToConvert" style="padding: 2rem">
+ <div class="card-header" >
+            <div style="align-self:center ;">
+              <h3>Invoice</h3>
+            </div>
+           
+          </div>
+
+          <div> <br><br>
+            <h6>BILLS GENERATOR</h6></div>
+            <p>Our Ref: Byteworks Technolgy Solutions Limited.</p>
+            <p>Customer's Name:_____________________________</p>
+            <br>
+            <p>Customer's Signature:__________________________</p>
+            <div style="margin-top: 3rem">
+              <table class="table">
+                  <thead>
+                  <tr>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>Price per Item</th>
+                    <th>Sub-Total</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                      <tr *ngFor="let item of sales"> 
+                          <td >{{item.item}}</td>
+                          <td>{{item.quantity}}</td>
+                          <td>₦{{item.unitPrice}}</td>
+                          <td>₦{{item.quantity * item.unitPrice}}</td>
+                        
+                  
+                          </tr>
+                  </tbody>
+                    </table>
+                <hr/>
+                    
+  
+                <h5 class="col-sm-12 " style="margin-left:20rem  " >TOTAL AMOUNT : ₦{{ total }} </h5>
+           </div>
+
+        </div>
+         
+
+        
+
+              <br/>
+              <br/>
+            
+             
+          
+          <div class="container" col-md-12 style="margin-bottom: 2rem">
+            <div class="row">
+         
+
+                <div class="col-md-6">
+                    <button style="align-self: center"  type="submit" class="btn btn-primary col-md-4" [routerLink]="['/']" routerLinkActive="router-link-active" >Back</button>
+
+               </div>
+               <div class="col-md-6">
+
+                
+                  <button style="align-self: center"  class="btn btn-primary col-md-5 " data-toggle="modal" data-target="#exampleModalCenter">Save Invoice</button>
+              </div>
+            </div>
+                        
+              
+
+                 
+       </div>
+        </div>
+
+        <div class="col-md-2">
+<!--Empty div-->
+          </div>
+  </div>
+
+  <br/>
+  <br>
+  <br/>
+  <br>
+  <br/>
+  <br>
+
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Comfirm Save</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h6>Click <b>No</b> to go back, or <b>Yes</b> to Confirm save </h6>
+            <p><b>NOTE:</b> An empty invoice cannot be saved</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+            <button type="button" class="btn btn-primary" (click)="save()"  value="CPTURE" (click)="captureScreen()" >Yes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
